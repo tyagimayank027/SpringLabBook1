@@ -1,21 +1,20 @@
 package com.cg.employeesms;
 
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class EmployeesMain {
 
-	public static void main(String args[]) {
+	public static void main(String[] args) 
+	{
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
-		context.register(EmployeesConfi.class);
+		context.register(JavaConfig.class);
 		context.refresh();
-		Employees employee = context.getBean(Employees.class);
-		System.out.println("Id: " + employee.getId() + " Name: " + employee.getName() + " Salary: "
-				+ employee.getSalary() + " Age: " + employee.getAge());
-
-		SBU sbu = context.getBean(SBU.class);
-		System.out.println(
-				"SbuId: " + sbu.getSbuId() + " SbuHead: " + sbu.getSbuHead() + " SbuName: " + sbu.getSbuName());
-		context.close();
+		Employee employee = context.getBean(Employee.class);
+		System.out.print("Employee "+" [empAge = "+employee.getAge()+" empId = "+employee.getEmployeeId()+
+				" empName = "+employee.getEmployeeName()+" empSalary = "+employee.getSalary()+
+				" SBU details = "+context.getBean(SBU.class)+"]");
+        context.close();
 
 	}
 

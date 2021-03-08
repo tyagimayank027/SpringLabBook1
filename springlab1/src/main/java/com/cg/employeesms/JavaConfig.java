@@ -8,6 +8,6 @@ import org.springframework.context.annotation.PropertySource;
 @ComponentScan("com.cg")
 @Configuration
 
-public class EmployeesConfi {
+public class JavaConfig {
 
 }
