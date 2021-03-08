@@ -15,6 +15,7 @@ public class EmployeesMain {
 		SBU sbu = context.getBean(SBU.class);
 		System.out.println(
 				"SbuId: " + sbu.getSbuId() + " SbuHead: " + sbu.getSbuHead() + " SbuName: " + sbu.getSbuName());
+		context.close();
 
 	}
 
